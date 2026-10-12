@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -32,29 +31,33 @@
       width: min(100%, 380px);
       padding: 28px 30px;
 
-      background: rgba(40, 20, 55, 0.35);
+      background: rgba(40, 15, 20, 0.48);
       backdrop-filter: blur(12px);
       -webkit-backdrop-filter: blur(12px);
 
-      border: 1.5px solid rgba(255, 255, 255, 0.65);
+      border: 1.5px solid rgba(255, 215, 130, 0.85);
       border-radius: 20px;
 
-      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+      box-shadow:
+        0 8px 32px rgba(0, 0, 0, 0.3),
+        0 0 18px rgba(218, 165, 60, 0.18);
+
       text-align: center;
     }
 
     /* PHOENIX FLOWER LOGO */
+
     .logo {
-      margin: 0 auto 8px;
       display: flex;
       flex-direction: column;
       align-items: center;
+      margin: 0 auto 8px;
     }
 
     .flower {
       position: relative;
-      width: 90px;
-      height: 82px;
+      width: 100px;
+      height: 90px;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -62,103 +65,132 @@
 
     .petal {
       position: absolute;
-      width: 23px;
-      height: 37px;
+      width: 24px;
+      height: 38px;
       border-radius: 80% 20% 75% 25%;
+
       background: linear-gradient(
         145deg,
-        #fff0ff,
-        #e7b5f5 48%,
-        #ad72d4
+        #fff0bd,
+        #e6b544 35%,
+        #c72b3d 72%,
+        #7f1024
       );
+
       transform-origin: bottom center;
-      box-shadow: 0 1px 5px rgba(70, 25, 100, 0.15);
+
+      box-shadow:
+        0 1px 6px rgba(0, 0, 0, 0.2),
+        0 0 4px rgba(255, 215, 120, 0.15);
     }
 
-    .petal:nth-child(1) {
-      transform: translateY(-13px) rotate(0deg);
+    .petal:nth-of-type(1) {
+      transform: translateY(-14px) rotate(0deg);
     }
 
-    .petal:nth-child(2) {
-      transform: translate(-14px, -5px) rotate(-40deg);
+    .petal:nth-of-type(2) {
+      transform: translate(-14px, -6px) rotate(-40deg);
     }
 
-    .petal:nth-child(3) {
-      transform: translate(14px, -5px) rotate(40deg);
+    .petal:nth-of-type(3) {
+      transform: translate(14px, -6px) rotate(40deg);
     }
 
-    .petal:nth-child(4) {
-      transform: translate(-22px, 8px) rotate(-65deg);
+    .petal:nth-of-type(4) {
+      transform: translate(-23px, 9px) rotate(-65deg);
     }
 
-    .petal:nth-child(5) {
-      transform: translate(22px, 8px) rotate(65deg);
+    .petal:nth-of-type(5) {
+      transform: translate(23px, 9px) rotate(65deg);
     }
 
-    .petal:nth-child(6) {
-      width: 18px;
-      height: 29px;
-      background: linear-gradient(145deg, #ffe5f4, #ef8fcb);
-      transform: translateY(10px) rotate(180deg);
+    .petal:nth-of-type(6) {
+      width: 19px;
+      height: 30px;
+      background: linear-gradient(
+        145deg,
+        #fff2c6,
+        #e8b84e,
+        #b51f35
+      );
+      transform: translateY(12px) rotate(180deg);
     }
 
     .flower-center {
       position: absolute;
-      top: 40px;
-      width: 12px;
-      height: 12px;
+      top: 44px;
+      width: 13px;
+      height: 13px;
       border-radius: 50%;
-      background: #fff2b8;
-      border: 2px solid #e5a5d6;
-      box-shadow: 0 0 8px rgba(255, 235, 255, 0.8);
+
+      background: radial-gradient(
+        circle at 35% 30%,
+        #fff8d5,
+        #ffd15c 65%,
+        #b98222
+      );
+
+      border: 2px solid #a71930;
+      box-shadow: 0 0 10px rgba(255, 215, 100, 0.6);
     }
+
+    /* PHOENIX WINGS */
 
     .wing {
       position: absolute;
-      top: 20px;
-      width: 25px;
-      height: 35px;
-      border-top: 3px solid #f9d6ff;
+      top: 21px;
+      width: 30px;
+      height: 38px;
+
+      border-top: 3px solid #f5d27c;
       border-radius: 100% 0 0 0;
     }
 
     .wing.left {
-      left: 2px;
+      left: 0;
       transform: rotate(-25deg);
     }
 
     .wing.right {
-      right: 2px;
+      right: 0;
       transform: scaleX(-1) rotate(-25deg);
     }
 
+    /* YūYū BRAND NAME */
+
     .logo-name {
-      font-family: Georgia, serif;
-      font-size: 37px;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 39px;
       font-weight: bold;
       letter-spacing: 2px;
       line-height: 1.2;
-      color: #fff0ff;
+
+      color: #ffda78;
+
       text-shadow:
-        0 2px 4px rgba(42, 12, 65, 0.6),
-        0 0 12px rgba(235, 190, 255, 0.45);
+        0 2px 4px rgba(0, 0, 0, 0.6),
+        0 0 12px rgba(255, 196, 70, 0.25);
     }
 
     .logo-subtitle {
-      margin-top: 4px;
-      margin-bottom: 22px;
-      color: #f7e5ff;
+      margin-top: 5px;
+      margin-bottom: 23px;
+
+      color: #ffe8b1;
       font-size: 10px;
       letter-spacing: 4px;
       text-transform: uppercase;
     }
 
+    /* LOGIN FORM */
+
     h2 {
       text-align: center;
       margin-bottom: 22px;
-      color: white;
-      font-size: clamp(27px, 5vw, 34px);
-      text-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+      color: #fff8e9;
+      font-size: clamp(28px, 5vw, 36px);
+
+      text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
     }
 
     input {
@@ -168,18 +200,18 @@
       padding: 14px;
       margin-bottom: 15px;
 
-      border: 1px solid rgba(255, 255, 255, 0.6);
+      border: 1px solid rgba(255, 215, 130, 0.65);
       border-radius: 8px;
       outline: none;
 
-      background: rgba(255, 255, 255, 0.92);
-      color: #392448;
+      background: rgba(255, 250, 240, 0.95);
+      color: #46202a;
       font-size: 16px;
     }
 
     input:focus {
-      border-color: #d9a7f5;
-      box-shadow: 0 0 0 3px rgba(217, 167, 245, 0.25);
+      border-color: #d9a441;
+      box-shadow: 0 0 0 3px rgba(230, 181, 68, 0.22);
     }
 
     button {
@@ -187,11 +219,17 @@
       width: 100%;
       padding: 14px;
 
-      border: none;
+      border: 1px solid #f6d780;
       border-radius: 8px;
-      background: linear-gradient(135deg, #ead5f5, #bd8bd7);
-      color: #392448;
 
+      background: linear-gradient(
+        135deg,
+        #fff0bd,
+        #e6b84e 55%,
+        #c8912e
+      );
+
+      color: #671729;
       font-size: 16px;
       font-weight: bold;
       cursor: pointer;
@@ -199,7 +237,13 @@
     }
 
     button:hover {
-      background: linear-gradient(135deg, #f7e8ff, #d5a9eb);
+      background: linear-gradient(
+        135deg,
+        #fff8dc,
+        #f5d780,
+        #e2ac40
+      );
+
       transform: translateY(-2px);
     }
 
@@ -209,6 +253,8 @@
       font-size: 14px;
       overflow-wrap: anywhere;
     }
+
+    /* MOBILE RESPONSIVE */
 
     @media (max-width: 480px) {
       body {
@@ -223,12 +269,8 @@
         border-radius: 16px;
       }
 
-      .flower {
-        transform: scale(0.9);
-      }
-
       .logo-name {
-        font-size: 34px;
+        font-size: 36px;
       }
 
       input,
@@ -249,8 +291,8 @@
       }
 
       .flower {
-        transform: scale(0.7);
-        height: 60px;
+        transform: scale(0.75);
+        height: 68px;
       }
 
       .logo-subtitle {
@@ -273,9 +315,11 @@
   <div class="login-container">
 
     <!-- YūYū PHOENIX FLOWER LOGO -->
+
     <div class="logo">
 
       <div class="flower">
+
         <div class="wing left"></div>
         <div class="wing right"></div>
 
@@ -287,16 +331,18 @@
         <span class="petal"></span>
 
         <span class="flower-center"></span>
+
       </div>
 
       <div class="logo-name">YūYū</div>
-      <p class="logo-subtitle">Beauty & Grace</p>
+      <p class="logo-subtitle">Beauty &amp; Grace</p>
 
     </div>
 
     <h2>Login</h2>
 
     <form id="loginForm">
+
       <input
         type="text"
         id="username"
@@ -314,6 +360,7 @@
       >
 
       <button type="submit">Log In</button>
+
     </form>
 
     <p id="message" role="status" aria-live="polite"></p>
