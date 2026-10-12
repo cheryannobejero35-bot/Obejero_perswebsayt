@@ -1,4 +1,5 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -29,7 +30,7 @@
 
     .login-container {
       width: min(100%, 380px);
-      padding: clamp(22px, 5vw, 35px);
+      padding: 28px 30px;
 
       background: rgba(40, 20, 55, 0.35);
       backdrop-filter: blur(12px);
@@ -39,13 +40,124 @@
       border-radius: 20px;
 
       box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+      text-align: center;
+    }
+
+    /* PHOENIX FLOWER LOGO */
+    .logo {
+      margin: 0 auto 8px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .flower {
+      position: relative;
+      width: 90px;
+      height: 82px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .petal {
+      position: absolute;
+      width: 23px;
+      height: 37px;
+      border-radius: 80% 20% 75% 25%;
+      background: linear-gradient(
+        145deg,
+        #fff0ff,
+        #e7b5f5 48%,
+        #ad72d4
+      );
+      transform-origin: bottom center;
+      box-shadow: 0 1px 5px rgba(70, 25, 100, 0.15);
+    }
+
+    .petal:nth-child(1) {
+      transform: translateY(-13px) rotate(0deg);
+    }
+
+    .petal:nth-child(2) {
+      transform: translate(-14px, -5px) rotate(-40deg);
+    }
+
+    .petal:nth-child(3) {
+      transform: translate(14px, -5px) rotate(40deg);
+    }
+
+    .petal:nth-child(4) {
+      transform: translate(-22px, 8px) rotate(-65deg);
+    }
+
+    .petal:nth-child(5) {
+      transform: translate(22px, 8px) rotate(65deg);
+    }
+
+    .petal:nth-child(6) {
+      width: 18px;
+      height: 29px;
+      background: linear-gradient(145deg, #ffe5f4, #ef8fcb);
+      transform: translateY(10px) rotate(180deg);
+    }
+
+    .flower-center {
+      position: absolute;
+      top: 40px;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: #fff2b8;
+      border: 2px solid #e5a5d6;
+      box-shadow: 0 0 8px rgba(255, 235, 255, 0.8);
+    }
+
+    .wing {
+      position: absolute;
+      top: 20px;
+      width: 25px;
+      height: 35px;
+      border-top: 3px solid #f9d6ff;
+      border-radius: 100% 0 0 0;
+    }
+
+    .wing.left {
+      left: 2px;
+      transform: rotate(-25deg);
+    }
+
+    .wing.right {
+      right: 2px;
+      transform: scaleX(-1) rotate(-25deg);
+    }
+
+    .logo-name {
+      font-family: Georgia, serif;
+      font-size: 37px;
+      font-weight: bold;
+      letter-spacing: 2px;
+      line-height: 1.2;
+      color: #fff0ff;
+      text-shadow:
+        0 2px 4px rgba(42, 12, 65, 0.6),
+        0 0 12px rgba(235, 190, 255, 0.45);
+    }
+
+    .logo-subtitle {
+      margin-top: 4px;
+      margin-bottom: 22px;
+      color: #f7e5ff;
+      font-size: 10px;
+      letter-spacing: 4px;
+      text-transform: uppercase;
     }
 
     h2 {
       text-align: center;
-      margin-bottom: 25px;
+      margin-bottom: 22px;
       color: white;
-      font-size: clamp(28px, 5vw, 38px);
+      font-size: clamp(27px, 5vw, 34px);
       text-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
     }
 
@@ -107,12 +219,16 @@
       .login-container {
         width: 100%;
         max-width: 360px;
-        padding: 25px 20px;
+        padding: 25px 22px;
         border-radius: 16px;
       }
 
-      h2 {
-        margin-bottom: 22px;
+      .flower {
+        transform: scale(0.9);
+      }
+
+      .logo-name {
+        font-size: 34px;
       }
 
       input,
@@ -132,6 +248,15 @@
         padding: 18px;
       }
 
+      .flower {
+        transform: scale(0.7);
+        height: 60px;
+      }
+
+      .logo-subtitle {
+        margin-bottom: 12px;
+      }
+
       h2 {
         margin-bottom: 14px;
       }
@@ -146,6 +271,29 @@
 <body>
 
   <div class="login-container">
+
+    <!-- YūYū PHOENIX FLOWER LOGO -->
+    <div class="logo">
+
+      <div class="flower">
+        <div class="wing left"></div>
+        <div class="wing right"></div>
+
+        <span class="petal"></span>
+        <span class="petal"></span>
+        <span class="petal"></span>
+        <span class="petal"></span>
+        <span class="petal"></span>
+        <span class="petal"></span>
+
+        <span class="flower-center"></span>
+      </div>
+
+      <div class="logo-name">YūYū</div>
+      <p class="logo-subtitle">Beauty & Grace</p>
+
+    </div>
+
     <h2>Login</h2>
 
     <form id="loginForm">
@@ -169,21 +317,30 @@
     </form>
 
     <p id="message" role="status" aria-live="polite"></p>
+
   </div>
 
   <script>
-    const username = "admin";
-    const password = "123456";
+    const correctUsername = "admin";
+    const correctPassword = "123456";
 
     document.getElementById("loginForm")
       .addEventListener("submit", function(e) {
         e.preventDefault();
 
-        const user = document.getElementById("username").value;
-        const pass = document.getElementById("password").value;
-        const message = document.getElementById("message");
+        const user =
+          document.getElementById("username").value.trim();
 
-        if (user === username && pass === password) {
+        const pass =
+          document.getElementById("password").value;
+
+        const message =
+          document.getElementById("message");
+
+        if (
+          user === correctUsername &&
+          pass === correctPassword
+        ) {
           message.style.color = "#d9ffd9";
           message.textContent = "Login successful!";
 
