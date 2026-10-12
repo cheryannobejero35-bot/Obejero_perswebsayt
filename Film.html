@@ -1,0 +1,200 @@
+
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YuYu Film Viewing</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            min-height: 100vh;
+            min-height: 100dvh;
+            background-image: url("back.jpg");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+
+        .navbar {
+            width: 100%;
+            padding: 18px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 15px;
+            flex-wrap: wrap;
+            background: rgba(255, 255, 255, 0.18);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+        }
+
+        .logo {
+            color: white;
+            font-size: 24px;
+            font-weight: bold;
+            text-shadow: 2px 2px 5px #333;
+        }
+
+        .navigation {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .navigation a {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.18);
+            color: white;
+            text-decoration: none;
+            padding: 10px 15px;
+            border: 1px solid rgba(255, 255, 255, 0.4);
+            border-radius: 10px;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.12);
+            transition: background 0.3s;
+        }
+
+        .navigation a:hover {
+            background: rgba(255, 255, 255, 0.35);
+        }
+
+        .navigation .logout {
+            background: rgba(0, 0, 0, 0.4);
+        }
+
+        .film {
+            width: 90%;
+            max-width: 850px;
+            margin: 40px auto 30px;
+            padding: 35px;
+            background: rgba(255, 255, 255, 0.18);
+            border: none;
+            border-radius: 15px;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            color: white;
+            text-align: center;
+        }
+
+        .film h1 {
+            margin-bottom: 20px;
+            font-size: clamp(25px, 4vw, 36px);
+            text-shadow: 2px 2px 4px #333;
+        }
+
+        .film p {
+            line-height: 1.7;
+            margin-bottom: 15px;
+            text-shadow: 1px 1px 3px #333;
+        }
+
+        video {
+            display: block;
+            width: 100%;
+            max-width: 700px;
+            height: auto;
+            margin: 25px auto;
+            border-radius: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            background: rgba(0, 0, 0, 0.3);
+        }
+
+        @media (max-width: 600px) {
+            .navbar {
+                flex-direction: column;
+                padding: 15px 12px;
+            }
+
+            .logo {
+                font-size: 22px;
+                text-align: center;
+            }
+
+            .navigation {
+                width: 100%;
+                gap: 8px;
+            }
+
+            .navigation a {
+                padding: 9px 11px;
+                font-size: 13px;
+            }
+
+            .film {
+                width: 92%;
+                margin: 25px auto;
+                padding: 22px 18px;
+            }
+
+            .film p {
+                font-size: 14px;
+            }
+        }
+
+        @media (max-width: 360px) {
+            .navigation {
+                gap: 6px;
+            }
+
+            .navigation a {
+                padding: 8px;
+                font-size: 12px;
+            }
+
+            .film {
+                padding: 20px 14px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <div class="logo">YuYu Boutique</div>
+
+        <div class="navigation">
+            <a href="homepage.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="product.html">Product</a>
+            <a href="Contact.html">Contact</a>
+            <a href="Film.html">Film Viewing</a>
+            <a href="index.html" class="logout">Log Out</a>
+        </div>
+    </nav>
+
+    <main>
+        <section class="film">
+
+            <h1>YuYu Film Viewing</h1>
+
+            <p>
+                Welcome to the YuYu Film Viewing page.
+                Watch our skincare video and learn more
+                about YuYu products.
+            </p>
+
+            <video controls playsinline>
+                <source src="yuyu.mp4" type="video/mp4">
+                Your browser does not support the video.
+            </video>
+
+            <p>Thank you for watching!</p>
+
+        </section>
+    </main>
+
+</body>
+</html>

@@ -1,0 +1,188 @@
+
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Homepage</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            min-height: 100vh;
+            min-height: 100dvh;
+            background-image: url("back.jpg");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+
+        .navbar {
+            width: 100%;
+            padding: 18px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 15px;
+            flex-wrap: wrap;
+            background: rgba(255, 255, 255, 0.18);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+        }
+
+        .logo {
+            color: white;
+            font-size: 24px;
+            font-weight: bold;
+            text-shadow: 2px 2px 5px #333;
+        }
+
+        .navigation {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .navigation a {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.18);
+            color: white;
+            text-decoration: none;
+            padding: 10px 15px;
+            border: 1px solid rgba(255, 255, 255, 0.4);
+            border-radius: 10px;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+            transition: background 0.3s;
+        }
+
+        .navigation a:hover {
+            background: rgba(255, 255, 255, 0.4);
+        }
+
+        .navigation .logout {
+            background: rgba(0, 0, 0, 0.4);
+        }
+
+        .welcome {
+            width: 90%;
+            max-width: 850px;
+            margin: 50px auto 25px;
+            padding: 30px;
+            background: rgba(255, 255, 255, 0.18);
+            border: none;
+            border-radius: 15px;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            text-align: center;
+            color: white;
+        }
+
+        .welcome h1 {
+            margin-bottom: 20px;
+            font-size: clamp(24px, 4vw, 36px);
+            text-shadow: 2px 2px 5px #333;
+        }
+
+        .welcome p {
+            margin-bottom: 15px;
+            line-height: 1.7;
+            font-size: 16px;
+            text-shadow: 1px 1px 3px #333;
+        }
+
+        @media (max-width: 600px) {
+            .navbar {
+                flex-direction: column;
+                padding: 15px 12px;
+            }
+
+            .logo {
+                font-size: 22px;
+                text-align: center;
+            }
+
+            .navigation {
+                width: 100%;
+                gap: 8px;
+            }
+
+            .navigation a {
+                padding: 9px 11px;
+                font-size: 13px;
+            }
+
+            .welcome {
+                width: 92%;
+                margin: 25px auto 20px;
+                padding: 22px 18px;
+            }
+
+            .welcome p {
+                font-size: 14px;
+            }
+        }
+
+        @media (max-width: 360px) {
+            .navigation {
+                gap: 6px;
+            }
+
+            .navigation a {
+                padding: 8px;
+                font-size: 12px;
+            }
+
+            .welcome h1 {
+                font-size: 23px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <div class="logo">YuYu Boutique</div>
+
+        <div class="navigation">
+            <a href="homepage.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="product.html">Product</a>
+            <a href="Contact.html">Contact</a>
+            <a href="Film.html">Film Viewing</a>
+            <a href="index.html" class="logout">Log Out</a>
+        </div>
+    </nav>
+
+    <main>
+        <section class="welcome">
+            <h1>Welcome to YuYu Boutique Homepage</h1>
+
+            <p>
+                YUYU Boutique is a beauty and skincare boutique dedicated to
+                helping you feel confident in your own skin. Our collection features
+                carefully selected skincare and beauty essentials designed to support
+                a fresh, healthy, and radiant look.
+                From nourishing creams and serums to gentle beauty essentials,
+                each product is presented with elegance and simplicity. At YUYU,
+                we believe skincare is more than a routine it is a moment to care for
+                yourself, feel beautiful, and embrace your natural glow.
+            </p>
+
+            <p>Thank you for visiting my homepage.</p>
+        </section>
+    </main>
+
+</body>
+</html>

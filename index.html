@@ -1,0 +1,109 @@
+<html>
+<head>
+  <title>Login</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-image: url("front.jpg");
+      background-size: cover;
+      background-position: center;
+    }
+
+    .login-container {
+      width: 300px;
+      padding: 25px;
+      background: rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border: 2px solid rgba(255, 255, 255, 0.5);
+      border-radius: 20px;
+      box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 25px;
+      color: white;
+      font-size: 40px;
+    }
+
+    input {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 15px;
+      border: none;
+      border-radius: 6px;
+      outline: none;
+    }
+
+    button {
+      width: 100%;
+      padding: 12px;
+      border: none;
+      border-radius: 6px;
+      background: white;
+      color: black;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    #message {
+      margin-top: 15px;
+      text-align: center;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="login-container">
+    <h2>Login</h2>
+
+    <form id="loginForm">
+      <input type="text" id="username" placeholder="Username" required>
+      <input type="password" id="password" placeholder="Password" required>
+      <button type="submit">Log In</button> 
+    </form>
+
+    <p id="message"></p>
+  </div>
+
+  <script>
+    const username = "admin";
+    const password = "123456";
+
+    document.getElementById("loginForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+
+      let user = document.getElementById("username").value;
+      let pass = document.getElementById("password").value;
+      let message = document.getElementById("message");
+
+      if (user === username && pass === password) {
+        message.style.color = "green";
+        message.textContent = "Login successful!";
+
+        setTimeout(function() {
+          window.location.href = "homepage.html";
+        }, 500);
+
+      } else {
+        message.style.color = "red";
+        message.textContent = "Invalid username or password.";
+      }
+    });
+  </script>
+
+</body>
+</html>

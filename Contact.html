@@ -1,0 +1,304 @@
+
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact YuYu</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            min-height: 100vh;
+            min-height: 100dvh;
+            background-image: url("back.jpg");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+
+        .navbar {
+            width: 100%;
+            padding: 18px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 15px;
+            flex-wrap: wrap;
+            background: rgba(255, 255, 255, 0.18);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+        }
+
+        .logo {
+            color: white;
+            font-size: 24px;
+            font-weight: bold;
+            text-shadow: 2px 2px 5px #333;
+        }
+
+        .navigation {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .navigation a {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.18);
+            color: white;
+            text-decoration: none;
+            padding: 10px 15px;
+            border: 1px solid rgba(255, 255, 255, 0.4);
+            border-radius: 10px;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+            transition: background 0.3s;
+        }
+
+        .navigation a:hover {
+            background: rgba(255, 255, 255, 0.4);
+        }
+
+        .navigation .logout {
+            background: rgba(0, 0, 0, 0.4);
+        }
+
+        .contact {
+            width: 90%;
+            max-width: 800px;
+            margin: 40px auto 25px;
+            padding: 35px;
+            background: rgba(255, 255, 255, 0.18);
+            border: none;
+            border-radius: 15px;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            color: white;
+        }
+
+        .contact h1 {
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: clamp(25px, 4vw, 36px);
+            text-shadow: 2px 2px 4px #333;
+        }
+
+        .contact > p {
+            text-align: center;
+            line-height: 1.7;
+            text-shadow: 1px 1px 3px #333;
+        }
+
+        .contact-info {
+            margin: 25px 0;
+        }
+
+        .contact-info h2 {
+            margin-bottom: 15px;
+            text-shadow: 1px 1px 3px #333;
+        }
+
+        .contact-info p {
+            margin-bottom: 12px;
+            line-height: 1.6;
+            overflow-wrap: anywhere;
+            text-shadow: 1px 1px 3px #333;
+        }
+
+        .form-group {
+            margin-bottom: 18px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+            text-shadow: 1px 1px 3px #333;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            display: block;
+            width: 100%;
+            padding: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            border-radius: 8px;
+            background: rgba(255, 255, 255, 0.25);
+            color: white;
+            outline: none;
+            font-size: 16px;
+        }
+
+        .form-group input::placeholder,
+        .form-group textarea::placeholder {
+            color: white;
+            opacity: 0.9;
+        }
+
+        .form-group textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        .send {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .send button {
+            padding: 12px 30px;
+            background: rgba(0, 0, 0, 0.4);
+            color: white;
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .send button:hover {
+            background: rgba(255, 255, 255, 0.3);
+        }
+
+        @media (max-width: 600px) {
+            .navbar {
+                flex-direction: column;
+                padding: 15px 12px;
+            }
+
+            .logo {
+                font-size: 22px;
+                text-align: center;
+            }
+
+            .navigation {
+                width: 100%;
+                gap: 8px;
+            }
+
+            .navigation a {
+                padding: 9px 11px;
+                font-size: 13px;
+            }
+
+            .contact {
+                width: 92%;
+                margin: 25px auto;
+                padding: 22px 18px;
+            }
+
+            .contact-info p {
+                font-size: 14px;
+            }
+        }
+
+        @media (max-width: 360px) {
+            .navigation {
+                gap: 6px;
+            }
+
+            .navigation a {
+                padding: 8px;
+                font-size: 12px;
+            }
+
+            .contact {
+                padding: 20px 14px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <div class="logo">YuYu Boutique</div>
+
+        <div class="navigation">
+            <a href="homepage.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="product.html">Product</a>
+            <a href="Contact.html">Contact</a>
+            <a href="Film.html">Film Viewing</a>
+            <a href="index.html" class="logout">Log Out</a>
+        </div>
+    </nav>
+
+    <main>
+        <section class="contact">
+
+            <h1>Contact YuYu</h1>
+
+            <p>
+                We would love to hear from you.
+                Feel free to contact us for questions,
+                product information, or other concerns.
+            </p>
+
+            <div class="contact-info">
+                <h2>Contact Information</h2>
+
+                <p>
+                    <strong>Email:</strong> cheryannobejero@gmail.com
+                </p>
+
+                <p>
+                    <strong>Phone:</strong> 0912-345-6789
+                </p>
+
+                <p>
+                    <strong>Location:</strong> Philippines
+                </p>
+            </div>
+
+            <form id="contactForm">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" placeholder="Enter your name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" placeholder="Enter your email" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" placeholder="Write your message here" required></textarea>
+                </div>
+
+                <div class="send">
+                    <button type="submit">Send Message</button>
+                </div>
+
+                <p id="formMessage" style="text-align:center; margin-top:15px;"></p>
+            </form>
+
+        </section>
+    </main>
+
+    <script>
+        document.getElementById("contactForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+
+            document.getElementById("formMessage").textContent =
+                "Thank you for contacting YuYu Boutique!";
+
+            document.getElementById("formMessage").style.color = "white";
+
+            this.reset();
+        });
+    </script>
+
+</body>
+</html>
