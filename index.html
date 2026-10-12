@@ -1,7 +1,9 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>YūYū Login</title>
 
   <style>
@@ -18,238 +20,138 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      padding: 24px 16px;
+      padding: 20px 16px;
 
       background-image: url("front.jpg");
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
-      background-attachment: scroll;
     }
 
     .login-container {
-      width: min(100%, 380px);
+      width: 100%;
+      max-width: 380px;
       padding: 28px 30px;
 
-      background: rgba(40, 15, 20, 0.48);
+      background: rgba(45, 25, 38, 0.60);
       backdrop-filter: blur(12px);
       -webkit-backdrop-filter: blur(12px);
 
-      border: 1.5px solid rgba(255, 215, 130, 0.85);
-      border-radius: 20px;
+      border: 2px solid #dfbd71;
+      border-radius: 25px;
 
-      box-shadow:
-        0 8px 32px rgba(0, 0, 0, 0.3),
-        0 0 18px rgba(218, 165, 60, 0.18);
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
 
       text-align: center;
     }
 
-    /* PHOENIX FLOWER LOGO */
+    /* YūYū LOGO */
 
     .logo {
       display: flex;
       flex-direction: column;
       align-items: center;
-      margin: 0 auto 8px;
+      margin-bottom: 55px;
     }
 
-    .flower {
-      position: relative;
+    /* Actual gold hibiscus flower image */
+
+    .logo-flower {
       width: 100px;
-      height: 90px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
+      height: 100px;
+      object-fit: contain;
+      display: block;
+      margin-bottom: 5px;
 
-    .petal {
-      position: absolute;
-      width: 24px;
-      height: 38px;
-      border-radius: 80% 20% 75% 25%;
-
-      background: linear-gradient(
-        145deg,
-        #fff0bd,
-        #e6b544 35%,
-        #c72b3d 72%,
-        #7f1024
+      filter: drop-shadow(
+        0 4px 5px rgba(0, 0, 0, 0.35)
       );
-
-      transform-origin: bottom center;
-
-      box-shadow:
-        0 1px 6px rgba(0, 0, 0, 0.2),
-        0 0 4px rgba(255, 215, 120, 0.15);
     }
-
-    .petal:nth-of-type(1) {
-      transform: translateY(-14px) rotate(0deg);
-    }
-
-    .petal:nth-of-type(2) {
-      transform: translate(-14px, -6px) rotate(-40deg);
-    }
-
-    .petal:nth-of-type(3) {
-      transform: translate(14px, -6px) rotate(40deg);
-    }
-
-    .petal:nth-of-type(4) {
-      transform: translate(-23px, 9px) rotate(-65deg);
-    }
-
-    .petal:nth-of-type(5) {
-      transform: translate(23px, 9px) rotate(65deg);
-    }
-
-    .petal:nth-of-type(6) {
-      width: 19px;
-      height: 30px;
-      background: linear-gradient(
-        145deg,
-        #fff2c6,
-        #e8b84e,
-        #b51f35
-      );
-      transform: translateY(12px) rotate(180deg);
-    }
-
-    .flower-center {
-      position: absolute;
-      top: 44px;
-      width: 13px;
-      height: 13px;
-      border-radius: 50%;
-
-      background: radial-gradient(
-        circle at 35% 30%,
-        #fff8d5,
-        #ffd15c 65%,
-        #b98222
-      );
-
-      border: 2px solid #a71930;
-      box-shadow: 0 0 10px rgba(255, 215, 100, 0.6);
-    }
-
-    /* PHOENIX WINGS */
-
-    .wing {
-      position: absolute;
-      top: 21px;
-      width: 30px;
-      height: 38px;
-
-      border-top: 3px solid #f5d27c;
-      border-radius: 100% 0 0 0;
-    }
-
-    .wing.left {
-      left: 0;
-      transform: rotate(-25deg);
-    }
-
-    .wing.right {
-      right: 0;
-      transform: scaleX(-1) rotate(-25deg);
-    }
-
-    /* YūYū BRAND NAME */
 
     .logo-name {
       font-family: Georgia, "Times New Roman", serif;
-      font-size: 39px;
+      font-size: 43px;
       font-weight: bold;
       letter-spacing: 2px;
       line-height: 1.2;
 
-      color: #ffda78;
+      color: #ffdc83;
 
       text-shadow:
-        0 2px 4px rgba(0, 0, 0, 0.6),
-        0 0 12px rgba(255, 196, 70, 0.25);
+        0 2px 4px rgba(0, 0, 0, 0.7),
+        0 0 8px rgba(255, 215, 120, 0.25);
     }
 
     .logo-subtitle {
-      margin-top: 5px;
-      margin-bottom: 23px;
+      margin-top: 10px;
 
-      color: #ffe8b1;
-      font-size: 10px;
+      color: #f7e5b7;
+      font-size: 11px;
       letter-spacing: 4px;
-      text-transform: uppercase;
     }
 
     /* LOGIN FORM */
 
     h2 {
-      text-align: center;
-      margin-bottom: 22px;
-      color: #fff8e9;
-      font-size: clamp(28px, 5vw, 36px);
-
-      text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+      color: #fffaf0;
+      font-size: 36px;
+      margin-bottom: 25px;
     }
 
     input {
-      display: block;
       width: 100%;
-      min-width: 0;
-      padding: 14px;
-      margin-bottom: 15px;
+      padding: 17px 16px;
+      margin-bottom: 18px;
 
-      border: 1px solid rgba(255, 215, 130, 0.65);
-      border-radius: 8px;
+      border: 1.5px solid #e4c77e;
+      border-radius: 13px;
       outline: none;
 
-      background: rgba(255, 250, 240, 0.95);
-      color: #46202a;
-      font-size: 16px;
+      background: #fffaf1;
+      color: #48222c;
+      font-size: 17px;
     }
 
     input:focus {
-      border-color: #d9a441;
-      box-shadow: 0 0 0 3px rgba(230, 181, 68, 0.22);
+      border-color: #f0c65e;
+      box-shadow: 0 0 7px rgba(255, 215, 120, 0.45);
     }
 
     button {
-      display: block;
       width: 100%;
-      padding: 14px;
+      padding: 17px;
 
-      border: 1px solid #f6d780;
-      border-radius: 8px;
+      border: 1px solid #ffe49a;
+      border-radius: 13px;
 
       background: linear-gradient(
-        135deg,
-        #fff0bd,
-        #e6b84e 55%,
-        #c8912e
+        110deg,
+        #fff0b5,
+        #e9bd50,
+        #d19b32
       );
 
-      color: #671729;
-      font-size: 16px;
+      color: #70213a;
+      font-size: 18px;
       font-weight: bold;
       cursor: pointer;
+
       transition: 0.3s;
     }
 
     button:hover {
-      background: linear-gradient(
-        135deg,
-        #fff8dc,
-        #f5d780,
-        #e2ac40
-      );
-
       transform: translateY(-2px);
+
+      background: linear-gradient(
+        110deg,
+        #fff7d8,
+        #f3d47c,
+        #e0ad43
+      );
     }
 
     #message {
       margin-top: 15px;
-      text-align: center;
       font-size: 14px;
       overflow-wrap: anywhere;
     }
@@ -257,54 +159,31 @@
     /* MOBILE RESPONSIVE */
 
     @media (max-width: 480px) {
-      body {
-        padding: 20px 16px;
-        background-position: center center;
-      }
-
       .login-container {
-        width: 100%;
         max-width: 360px;
         padding: 25px 22px;
-        border-radius: 16px;
+      }
+
+      .logo {
+        margin-bottom: 45px;
+      }
+
+      .logo-flower {
+        width: 90px;
+        height: 90px;
       }
 
       .logo-name {
-        font-size: 36px;
+        font-size: 39px;
+      }
+
+      h2 {
+        font-size: 32px;
       }
 
       input,
       button {
-        padding: 13px;
-      }
-    }
-
-    @media (max-height: 500px) and (orientation: landscape) {
-      body {
-        align-items: flex-start;
-        padding-top: 20px;
-        padding-bottom: 20px;
-      }
-
-      .login-container {
-        padding: 18px;
-      }
-
-      .flower {
-        transform: scale(0.75);
-        height: 68px;
-      }
-
-      .logo-subtitle {
-        margin-bottom: 12px;
-      }
-
-      h2 {
-        margin-bottom: 14px;
-      }
-
-      input {
-        margin-bottom: 10px;
+        padding: 15px;
       }
     }
   </style>
@@ -314,30 +193,25 @@
 
   <div class="login-container">
 
-    <!-- YūYū PHOENIX FLOWER LOGO -->
+    <!-- YūYū BRAND LOGO -->
 
     <div class="logo">
 
-      <div class="flower">
-
-        <div class="wing left"></div>
-        <div class="wing right"></div>
-
-        <span class="petal"></span>
-        <span class="petal"></span>
-        <span class="petal"></span>
-        <span class="petal"></span>
-        <span class="petal"></span>
-        <span class="petal"></span>
-
-        <span class="flower-center"></span>
-
-      </div>
+      <img
+        src="yuyu-flower.png"
+        alt="Gold hibiscus flower"
+        class="logo-flower"
+      >
 
       <div class="logo-name">YūYū</div>
-      <p class="logo-subtitle">Beauty &amp; Grace</p>
+
+      <p class="logo-subtitle">
+        BEAUTY &amp; GRACE
+      </p>
 
     </div>
+
+    <!-- LOGIN FORM -->
 
     <h2>Login</h2>
 
@@ -372,21 +246,22 @@
     const correctPassword = "123456";
 
     document.getElementById("loginForm")
-      .addEventListener("submit", function(e) {
-        e.preventDefault();
+      .addEventListener("submit", function(event) {
 
-        const user =
+        event.preventDefault();
+
+        const username =
           document.getElementById("username").value.trim();
 
-        const pass =
+        const password =
           document.getElementById("password").value;
 
         const message =
           document.getElementById("message");
 
         if (
-          user === correctUsername &&
-          pass === correctPassword
+          username === correctUsername &&
+          password === correctPassword
         ) {
           message.style.color = "#d9ffd9";
           message.textContent = "Login successful!";
