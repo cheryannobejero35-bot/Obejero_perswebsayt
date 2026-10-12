@@ -1,6 +1,8 @@
 <html>
 <head>
-  <title>Login</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>YūYū Login</title>
 
   <style>
     * {
@@ -11,56 +13,132 @@
     }
 
     body {
-      height: 100vh;
+      min-height: 100vh;
+      min-height: 100dvh;
       display: flex;
       justify-content: center;
       align-items: center;
+      padding: 24px 16px;
+
       background-image: url("front.jpg");
       background-size: cover;
       background-position: center;
+      background-repeat: no-repeat;
+      background-attachment: scroll;
     }
 
     .login-container {
-      width: 300px;
-      padding: 25px;
-      background: rgba(255, 255, 255, 0.15);
-      backdrop-filter: blur(10px);
-      -webkit-backdrop-filter: blur(10px);
-      border: 2px solid rgba(255, 255, 255, 0.5);
+      width: min(100%, 380px);
+      padding: clamp(22px, 5vw, 35px);
+
+      background: rgba(40, 20, 55, 0.35);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+
+      border: 1.5px solid rgba(255, 255, 255, 0.65);
       border-radius: 20px;
-      box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
     }
 
     h2 {
       text-align: center;
       margin-bottom: 25px;
       color: white;
-      font-size: 40px;
+      font-size: clamp(28px, 5vw, 38px);
+      text-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
     }
 
     input {
+      display: block;
       width: 100%;
-      padding: 12px;
+      min-width: 0;
+      padding: 14px;
       margin-bottom: 15px;
-      border: none;
-      border-radius: 6px;
+
+      border: 1px solid rgba(255, 255, 255, 0.6);
+      border-radius: 8px;
       outline: none;
+
+      background: rgba(255, 255, 255, 0.92);
+      color: #392448;
+      font-size: 16px;
+    }
+
+    input:focus {
+      border-color: #d9a7f5;
+      box-shadow: 0 0 0 3px rgba(217, 167, 245, 0.25);
     }
 
     button {
+      display: block;
       width: 100%;
-      padding: 12px;
+      padding: 14px;
+
       border: none;
-      border-radius: 6px;
-      background: white;
-      color: black;
+      border-radius: 8px;
+      background: linear-gradient(135deg, #ead5f5, #bd8bd7);
+      color: #392448;
+
       font-size: 16px;
+      font-weight: bold;
       cursor: pointer;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      background: linear-gradient(135deg, #f7e8ff, #d5a9eb);
+      transform: translateY(-2px);
     }
 
     #message {
       margin-top: 15px;
       text-align: center;
+      font-size: 14px;
+      overflow-wrap: anywhere;
+    }
+
+    @media (max-width: 480px) {
+      body {
+        padding: 20px 16px;
+        background-position: center center;
+      }
+
+      .login-container {
+        width: 100%;
+        max-width: 360px;
+        padding: 25px 20px;
+        border-radius: 16px;
+      }
+
+      h2 {
+        margin-bottom: 22px;
+      }
+
+      input,
+      button {
+        padding: 13px;
+      }
+    }
+
+    @media (max-height: 500px) and (orientation: landscape) {
+      body {
+        align-items: flex-start;
+        padding-top: 20px;
+        padding-bottom: 20px;
+      }
+
+      .login-container {
+        padding: 18px;
+      }
+
+      h2 {
+        margin-bottom: 14px;
+      }
+
+      input {
+        margin-bottom: 10px;
+      }
     }
   </style>
 </head>
@@ -71,38 +149,54 @@
     <h2>Login</h2>
 
     <form id="loginForm">
-      <input type="text" id="username" placeholder="Username" required>
-      <input type="password" id="password" placeholder="Password" required>
-      <button type="submit">Log In</button> 
+      <input
+        type="text"
+        id="username"
+        placeholder="Username"
+        autocomplete="username"
+        required
+      >
+
+      <input
+        type="password"
+        id="password"
+        placeholder="Password"
+        autocomplete="current-password"
+        required
+      >
+
+      <button type="submit">Log In</button>
     </form>
 
-    <p id="message"></p>
+    <p id="message" role="status" aria-live="polite"></p>
   </div>
 
   <script>
     const username = "admin";
     const password = "123456";
 
-    document.getElementById("loginForm").addEventListener("submit", function(e) {
-      e.preventDefault();
+    document.getElementById("loginForm")
+      .addEventListener("submit", function(e) {
+        e.preventDefault();
 
-      let user = document.getElementById("username").value;
-      let pass = document.getElementById("password").value;
-      let message = document.getElementById("message");
+        const user = document.getElementById("username").value;
+        const pass = document.getElementById("password").value;
+        const message = document.getElementById("message");
 
-      if (user === username && pass === password) {
-        message.style.color = "green";
-        message.textContent = "Login successful!";
+        if (user === username && pass === password) {
+          message.style.color = "#d9ffd9";
+          message.textContent = "Login successful!";
 
-        setTimeout(function() {
-          window.location.href = "homepage.html";
-        }, 500);
+          setTimeout(function() {
+            window.location.href = "homepage.html";
+          }, 500);
 
-      } else {
-        message.style.color = "red";
-        message.textContent = "Invalid username or password.";
-      }
-    });
+        } else {
+          message.style.color = "#ffe0e8";
+          message.textContent =
+            "Invalid username or password.";
+        }
+      });
   </script>
 
 </body>
