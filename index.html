@@ -1,3 +1,4 @@
+
 <html>
 <head>
   <meta charset="UTF-8">
@@ -96,6 +97,7 @@
       margin-top: 18px;
       text-align: center;
       font-size: 15px;
+      font-weight: bold;
       overflow-wrap: anywhere;
     }
 
@@ -202,15 +204,15 @@
         const message = document.getElementById("message");
 
         if (user === username && pass === password) {
-          message.style.color = "#d9ffd9";
+          message.style.color = "#00ff00";
           message.textContent = "Login successful!";
 
           setTimeout(function() {
             window.location.href = "homepage.html";
-          }, 500);
+          }, 1500);
 
         } else {
-          message.style.color = "#ffe0e8";
+          message.style.color = "#ff3333";
           message.textContent =
             "Invalid username or password.";
         }
