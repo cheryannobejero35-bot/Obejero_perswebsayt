@@ -1,5 +1,6 @@
 
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -31,7 +32,7 @@
     .login-container {
       width: 100%;
       max-width: 430px;
-      padding: 40px 32px;
+      padding: 35px 32px;
 
       background: rgba(40, 20, 55, 0.45);
       backdrop-filter: blur(12px);
@@ -41,6 +42,22 @@
       border-radius: 22px;
 
       box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+    }
+
+    .logo-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+
+    .logo-container img {
+      display: block;
+      width: 140px;
+      max-width: 65%;
+      height: auto;
+      object-fit: contain;
+      background: transparent;
     }
 
     h2 {
@@ -110,8 +127,16 @@
       .login-container {
         width: 100%;
         max-width: 440px;
-        padding: 38px 26px;
+        padding: 30px 26px;
         border-radius: 20px;
+      }
+
+      .logo-container {
+        margin-bottom: 18px;
+      }
+
+      .logo-container img {
+        width: 150px;
       }
 
       h2 {
@@ -133,7 +158,11 @@
 
     @media (max-width: 360px) {
       .login-container {
-        padding: 30px 20px;
+        padding: 26px 20px;
+      }
+
+      .logo-container img {
+        width: 125px;
       }
 
       h2 {
@@ -152,6 +181,14 @@
         padding: 22px;
       }
 
+      .logo-container {
+        margin-bottom: 10px;
+      }
+
+      .logo-container img {
+        width: 90px;
+      }
+
       h2 {
         margin-bottom: 18px;
       }
@@ -166,6 +203,11 @@
 <body>
 
   <div class="login-container">
+
+    <div class="logo-container">
+      <img src="final logo.png" alt="YuYu three-leaf flower logo">
+    </div>
+
     <h2>Login</h2>
 
     <form id="loginForm">
@@ -189,11 +231,12 @@
     </form>
 
     <p id="message" role="status" aria-live="polite"></p>
+
   </div>
 
   <script>
-    const username = "admin";
-    const password = "123456";
+    const username = "chery";
+    const password = "12345";
 
     document.getElementById("loginForm")
       .addEventListener("submit", function(e) {
