@@ -1,5 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -29,24 +28,25 @@
     }
 
     .login-container {
-      width: min(100%, 380px);
-      padding: clamp(22px, 5vw, 35px);
+      width: 100%;
+      max-width: 430px;
+      padding: 40px 32px;
 
-      background: rgba(40, 20, 55, 0.35);
+      background: rgba(40, 20, 55, 0.45);
       backdrop-filter: blur(12px);
       -webkit-backdrop-filter: blur(12px);
 
       border: 1.5px solid rgba(255, 255, 255, 0.65);
-      border-radius: 20px;
+      border-radius: 22px;
 
       box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
     }
 
     h2 {
       text-align: center;
-      margin-bottom: 25px;
+      margin-bottom: 30px;
       color: white;
-      font-size: clamp(28px, 5vw, 38px);
+      font-size: 38px;
       text-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
     }
 
@@ -54,16 +54,16 @@
       display: block;
       width: 100%;
       min-width: 0;
-      padding: 14px;
-      margin-bottom: 15px;
+      padding: 17px;
+      margin-bottom: 20px;
 
       border: 1px solid rgba(255, 255, 255, 0.6);
-      border-radius: 8px;
+      border-radius: 10px;
       outline: none;
 
-      background: rgba(255, 255, 255, 0.92);
+      background: rgba(255, 255, 255, 0.95);
       color: #392448;
-      font-size: 16px;
+      font-size: 17px;
     }
 
     input:focus {
@@ -74,14 +74,14 @@
     button {
       display: block;
       width: 100%;
-      padding: 14px;
+      padding: 17px;
 
       border: none;
-      border-radius: 8px;
+      border-radius: 10px;
       background: linear-gradient(135deg, #ead5f5, #bd8bd7);
       color: #392448;
 
-      font-size: 16px;
+      font-size: 18px;
       font-weight: bold;
       cursor: pointer;
       transition: 0.3s;
@@ -93,32 +93,49 @@
     }
 
     #message {
-      margin-top: 15px;
+      margin-top: 18px;
       text-align: center;
-      font-size: 14px;
+      font-size: 15px;
       overflow-wrap: anywhere;
     }
 
     @media (max-width: 480px) {
       body {
-        padding: 20px 16px;
+        padding: 20px 12px;
         background-position: center center;
       }
 
       .login-container {
         width: 100%;
-        max-width: 360px;
-        padding: 25px 20px;
-        border-radius: 16px;
+        max-width: 440px;
+        padding: 38px 26px;
+        border-radius: 20px;
       }
 
       h2 {
-        margin-bottom: 22px;
+        font-size: 36px;
+        margin-bottom: 30px;
       }
 
-      input,
+      input {
+        padding: 17px 15px;
+        margin-bottom: 20px;
+        font-size: 17px;
+      }
+
       button {
-        padding: 13px;
+        padding: 17px;
+        font-size: 18px;
+      }
+    }
+
+    @media (max-width: 360px) {
+      .login-container {
+        padding: 30px 20px;
+      }
+
+      h2 {
+        font-size: 32px;
       }
     }
 
@@ -130,15 +147,15 @@
       }
 
       .login-container {
-        padding: 18px;
+        padding: 22px;
       }
 
       h2 {
-        margin-bottom: 14px;
+        margin-bottom: 18px;
       }
 
       input {
-        margin-bottom: 10px;
+        margin-bottom: 12px;
       }
     }
   </style>
