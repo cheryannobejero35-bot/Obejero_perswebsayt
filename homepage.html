@@ -1,5 +1,5 @@
 
-<html>
+<html >
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -25,22 +25,35 @@
 
         .navbar {
             width: 100%;
-            padding: 18px 5%;
+            padding: 15px 4%;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            gap: 15px;
+            gap: 18px;
             flex-wrap: wrap;
+
             background: rgba(255, 255, 255, 0.18);
             backdrop-filter: blur(10px);
             -webkit-backdrop-filter: blur(10px);
         }
 
         .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
             color: white;
-            font-size: 24px;
+            font-size: 27px;
             font-weight: bold;
             text-shadow: 2px 2px 5px #333;
+            white-space: nowrap;
+        }
+
+        .logo img {
+            width: 75px;
+            height: 75px;
+            object-fit: contain;
+            display: block;
+            flex-shrink: 0;
         }
 
         .navigation {
@@ -78,12 +91,14 @@
             max-width: 850px;
             margin: 50px auto 25px;
             padding: 30px;
+
             background: rgba(255, 255, 255, 0.18);
             border: none;
             border-radius: 15px;
             box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
             backdrop-filter: blur(10px);
             -webkit-backdrop-filter: blur(10px);
+
             text-align: center;
             color: white;
         }
@@ -101,15 +116,41 @@
             text-shadow: 1px 1px 3px #333;
         }
 
-        @media (max-width: 600px) {
+        @media (max-width: 900px) {
             .navbar {
-                flex-direction: column;
-                padding: 15px 12px;
+                justify-content: center;
             }
 
             .logo {
-                font-size: 22px;
+                justify-content: center;
+            }
+
+            .navigation {
+                width: 100%;
+            }
+        }
+
+        @media (max-width: 600px) {
+            body {
+                background-attachment: scroll;
+            }
+
+            .navbar {
+                flex-direction: column;
+                padding: 16px 12px;
+                gap: 16px;
+            }
+
+            .logo {
+                justify-content: center;
+                gap: 10px;
+                font-size: 25px;
                 text-align: center;
+            }
+
+            .logo img {
+                width: 70px;
+                height: 70px;
             }
 
             .navigation {
@@ -134,6 +175,16 @@
         }
 
         @media (max-width: 360px) {
+            .logo {
+                gap: 8px;
+                font-size: 22px;
+            }
+
+            .logo img {
+                width: 62px;
+                height: 62px;
+            }
+
             .navigation {
                 gap: 6px;
             }
@@ -153,7 +204,11 @@
 <body>
 
     <nav class="navbar">
-        <div class="logo">YuYu Boutique</div>
+
+        <div class="logo">
+            <img src="final logo.png" alt="YuYu flower logo">
+            <span>YuYu Boutique</span>
+        </div>
 
         <div class="navigation">
             <a href="homepage.html">Home</a>
@@ -163,6 +218,7 @@
             <a href="Film.html">Film Viewing</a>
             <a href="index.html" class="logout">Log Out</a>
         </div>
+
     </nav>
 
     <main>
@@ -176,7 +232,7 @@
                 a fresh, healthy, and radiant look.
                 From nourishing creams and serums to gentle beauty essentials,
                 each product is presented with elegance and simplicity. At YUYU,
-                we believe skincare is more than a routine it is a moment to care for
+                we believe skincare is more than a routine; it is a moment to care for
                 yourself, feel beautiful, and embrace your natural glow.
             </p>
 
